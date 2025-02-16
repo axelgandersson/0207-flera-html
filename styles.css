@@ -222,3 +222,66 @@ footer a:hover {
     margin-left: 1rem;
   }
 }
+
+/* Portfolio Section Styles */
+#projectsPort {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+.projectPort-card-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.projectPort-card {
+  background: var(--card-bg-color);
+  border-radius: 20px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--card-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.projectPort-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.projectPort-card h3 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.projectPort-card p {
+  padding: 0 1rem;
+  font-size: 1rem;
+  color: var(--card-text-color);
+}
+
+.projectPort-card a {
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--header-footer-bg-color);
+  color: var(--header-footer-text-color);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.projectPort-card a:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}

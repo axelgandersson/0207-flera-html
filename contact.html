@@ -11,48 +11,56 @@
     />
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="index.html">Hem</a></li>
-        <li><a href="about.html">Om Mig</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html" class="active">Kontakt</a></li>
-      </ul>
-    </nav>
+    <!-- Checkbox at the top of the document -->
+    <input type="checkbox" id="theme-switch" />
 
-    <header>
-      <h1>Kontakt</h1>
-    </header>
+    <!-- Wrap all content in a container -->
+    <div class="content-wrapper">
+      <nav>
+        <ul>
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="about.html">Om Mig</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html" class="active">Kontakt</a></li>
+        </ul>
+      </nav>
 
-    <section id="contact">
-      <p>Du kan nå mig via följande kanaler:</p>
-      <ul>
-        <li>
-          <strong>Email:</strong>
-          <a href="axelgandersson@gmail.com">axelgandersson@gmail.com</a>
-        </li>
-        <li>
-          <strong>LinkedIn:</strong>
-          <a href="https://linkedin.com">LinkedIn Profil</a>
-        </li>
-        <li>
-          <strong>GitHub:</strong>
-          <a href="https://github.com">GitHub Profil</a>
-        </li>
-      </ul>
-    </section>
+      <header>
+        <h1>Kontakt</h1>
+      </header>
 
-    <footer>
-      <img id="logopicture" src="./bilder/loga.JPG" />
-      <ul id="bottomlist">
-        <li><a href="axelgandersson@gmail.com">Email</a></li>
-        <li>
-          <a href="https://www.linkedin.com/in/axel-andersson-b72406312/"
-            >LinkedIn</a
-          >
-        </li>
-        <li><a href="https://github.com/axelgandersson">GitHub</a></li>
-      </ul>
-    </footer>
+      <section id="contact">
+        <p>Du kan nå mig via följande kanaler:</p>
+        <ul>
+          <li>
+            <strong>Email:</strong>
+            <a href="axelgandersson@gmail.com">axelgandersson@gmail.com</a>
+          </li>
+          <li>
+            <strong>LinkedIn:</strong>
+            <a href="https://linkedin.com">LinkedIn Profil</a>
+          </li>
+          <li>
+            <strong>GitHub:</strong>
+            <a href="https://github.com">GitHub Profil</a>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <img id="logopicture" src="./bilder/loga.JPG" />
+        <!-- Label in the footer to toggle the checkbox -->
+        <label for="theme-switch" class="theme-label">Toggle Dark Mode</label>
+        <ul id="bottomlist">
+          <li><a href="axelgandersson@gmail.com">Email</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/axel-andersson-b72406312/"
+              >LinkedIn</a
+            >
+          </li>
+          <li><a href="https://github.com/axelgandersson">GitHub</a></li>
+        </ul>
+      </footer>
+    </div>
   </body>
 </html>
