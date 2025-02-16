@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Axel Andersson</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Checkbox at the top of the document -->
+    <input type="checkbox" id="theme-switch" />
+
+    <!-- Wrap all content in a container -->
+    <div class="content-wrapper">
+      <nav>
+        <ul>
+          <li><a href="index.html">Hem</a></li>
+          <li><a href="about.html">Om Mig</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <header>
+        <h1>Portfolio</h1>
+      </header>
+
+      <section id="projectsPort">
+        <div class="projectPort-card-content">
+          <div class="projectPort-card">
+            <img src="./bilder/proj 1.JPG" alt="Projekt 1" />
+            <h3>E-handelsplattform</h3>
+            <p>En fullstack e-handelsplattform byggd med React och Node.js.</p>
+            <a href="#">Länk till projekt</a>
+          </div>
+          <div class="projectPort-card">
+            <img src="project2.jpg" alt="Projekt 2" />
+            <h3>Portfolio Webbplats</h3>
+            <p>
+              En responsiv webbplats för att visa upp projekt och erfarenheter.
+            </p>
+            <a href="#">Länk till projekt</a>
+          </div>
+          <div class="projectPort-card">
+            <img src="project3.jpg" alt="Projekt 3" />
+            <h3>Todo App</h3>
+            <p>En enkel todo-app byggd med Vue.js och Firebase.</p>
+            <a href="#">Länk till projekt</a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <img id="logopicture" src="./bilder/loga.JPG" />
+        <!-- Label in the footer to toggle the checkbox -->
+        <label for="theme-switch" class="theme-label">Toggle Dark Mode</label>
+        <ul id="bottomlist">
+          <li><a href="axelgandersson@gmail.com">Email</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/axel-andersson-b72406312/"
+              >LinkedIn</a
+            >
+          </li>
+          <li><a href="https://github.com/axelgandersson">GitHub</a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>

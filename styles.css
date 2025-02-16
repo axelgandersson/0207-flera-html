@@ -1,0 +1,224 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --card-bg-color: linear-gradient(to bottom right, pink, yellow);
+  --card-text-color: #333333;
+  --header-footer-bg-color: #333333;
+  --header-footer-text-color: #ffffff;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#theme-switch {
+  display: none;
+}
+
+#theme-switch:checked ~ .content-wrapper {
+  --bg-color: #333333;
+  --text-color: #ffffff;
+  --card-bg-color: linear-gradient(to bottom right, #d87093, #d8a347);
+  --card-text-color: #f0f0f0;
+  --header-footer-bg-color: #1a1a1a;
+  --header-footer-text-color: #f0f0f0;
+}
+
+.content-wrapper {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav {
+  background-color: var(--header-footer-bg-color);
+  color: var(--header-footer-text-color);
+  padding: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  color: var(--header-footer-text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#parent1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 50vh;
+  gap: 3rem;
+  margin: 1rem;
+  padding: 2rem;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-container,
+.image-container {
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  object-fit: fill;
+  box-shadow: rgb(51, 51, 51) 5px 5px;
+  border-radius: 20%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(51, 51, 51);
+  border-image: initial;
+  overflow: hidden;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+  background: var(--card-bg-color);
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 1rem;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: var(--card-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.linktocv {
+  display: flex;
+  align-self: center;
+}
+
+#proj {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin: 1rem auto;
+  padding: 2rem;
+  height: 30rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--card-bg-color);
+  border-radius: 20%;
+  box-shadow: 5px 5px #333;
+  overflow: hidden;
+  border: solid black 1px;
+  color: var(--card-text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  min-height: 50%;
+  border-bottom: #333 solid 2px;
+}
+
+.project-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  text-align: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+footer {
+  background-color: var(--header-footer-bg-color);
+  color: var(--header-footer-text-color);
+  text-align: end;
+  padding: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+footer a {
+  color: var(--header-footer-text-color);
+  text-decoration: none;
+  list-style: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+#bottomlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#logopicture {
+  display: flex;
+  width: 150px;
+}
+
+@media only screen and (max-width: 768px) {
+  #parent1 {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  #proj {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .project-card {
+    height: auto;
+  }
+
+  .project-card img {
+    height: 150px;
+  }
+
+  #projhead {
+    margin-left: 1rem;
+  }
+}

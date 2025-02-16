@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axel Andersson - CV Sida</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Checkbox at the top of the document -->
+    <input type="checkbox" id="theme-switch" />
+
+    <!-- Wrap all content in a container -->
+    <div class="content-wrapper">
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Hem</a></li>
+          <li><a href="about.html">Om Mig</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div id="parent1">
+        <div class="image-container">
+          <img src="./bilder/profbild.JPG" alt="Profilbild" />
+        </div>
+
+        <div class="text-container">
+          <p>
+            Hej! Jag heter Axel Andersson och är en passionerad
+            programmerarstudent på YH Borås. <br />
+            Denna sida är lite tom nu men den kommer fyllas med framtida projekt
+            och meriter.
+          </p>
+          <a class="linktocv" href="about.html"> här</a>
+        </div>
+      </div>
+
+      <h2 id="projhead">Mina Projekt:</h2>
+
+      <div id="proj">
+        <div class="project-card">
+          <img src="./bilder/proj 1.JPG" alt="Projekt 1" />
+          <div class="project-card-content">
+            <h3>Inloggningsida</h3>
+            <p>En inloggningsida skapat i html och css</p>
+            <a href="https://github.com/axelgandersson/inloggsida"
+              >Länk till projekt</a
+            >
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="./bilder/cvsidabild.JPG" alt="Projekt 2" />
+          <div class="project-card-content">
+            <h3>Portfolio Webbplats</h3>
+            <p>
+              En responsiv webbplats för att visa upp projekt och erfarenheter.
+            </p>
+            <a href="https://www.w3schools.com/TAgs/tag_button.asp"
+              >Länk till projekt</a
+            >
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="./bilder/darkmodetoggle.png" alt="Projekt 3" />
+          <div class="project-card-content">
+            <h3>Dark Mode Toggle button</h3>
+            <p>En enkel js kod som jag kan anväda mig av i framtida projekt</p>
+            <a href="#">Länk till projekt</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="" alt="TBA" />
+          <div class="project-card-content">
+            <h3>Nytt Projekt</h3>
+            <p>Nytt projekt kommer snart.</p>
+            <a href="#">Länk till projekt</a>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <img id="logopicture" src="./bilder/loga.JPG" />
+        <!-- Label in the footer to toggle the checkbox -->
+        <label for="theme-switch" class="theme-label">Toggle Dark Mode</label>
+        <ul id="bottomlist">
+          <li><a href="axelgandersson@gmail.com">Email</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/axel-andersson-b72406312/"
+              >LinkedIn</a
+            >
+          </li>
+          <li><a href="https://github.com/axelgandersson">GitHub</a></li>
+        </ul>
+      </footer>
+    </div>
+  </body>
+</html>
