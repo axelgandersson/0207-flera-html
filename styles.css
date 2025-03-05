@@ -18,6 +18,10 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+#about {
+  margin: 1em;
+}
+
 #theme-switch {
   display: none;
 }
@@ -38,28 +42,39 @@ body {
 }
 
 .theme-label {
-  display: inline-block;
-  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--text-color);
   color: var(--bg-color);
   cursor: pointer;
   border-radius: 5px;
-  margin: 20px;
+  padding: 0.5rem 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  background-color: var(--header-footer-bg-color);
+  color: var(--header-footer-text-color);
+}
+
+/* nav {
   background-color: var(--header-footer-bg-color);
   color: var(--header-footer-text-color);
   padding: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
+} */
 
 nav ul {
   list-style: none;
   padding: 0;
   display: flex;
-  justify-content: space-around;
+  gap: 4em;
 }
 
 nav a {
@@ -73,6 +88,10 @@ nav a.active {
   text-decoration: underline;
 }
 
+nav a:hover {
+  text-decoration: underline;
+}
+
 #parent1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -80,6 +99,10 @@ nav a.active {
   gap: 3rem;
   margin: 1rem;
   padding: 2rem;
+}
+
+#contact {
+  margin: 1em;
 }
 
 .image-container img {
@@ -101,6 +124,10 @@ nav a.active {
   border-color: rgb(51, 51, 51);
   border-image: initial;
   overflow: hidden;
+}
+
+h2 {
+  margin: 1em;
 }
 
 .text-container {
@@ -162,11 +189,12 @@ nav a.active {
 footer {
   background-color: var(--header-footer-bg-color);
   color: var(--header-footer-text-color);
-  text-align: end;
+  text-align: center; /* Change from end to center */
   padding: 1rem;
   margin-top: 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -185,9 +213,29 @@ footer a:hover {
   list-style: none;
   margin: 0;
   padding: 0;
+  gap: 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+#bottomlist li {
+  margin: 0 1rem;
+}
+
+#bottomlist a {
+  color: var(--header-footer-text-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#bottomlist a:hover {
+  text-decoration: underline;
+}
+
+#bottomlist i {
+  margin-right: 0.5rem;
 }
 
 #logopicture {
@@ -284,4 +332,30 @@ footer a:hover {
 .projectPort-card a:hover {
   background-color: var(--text-color);
   color: var(--bg-color);
+}
+
+.logo {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 1rem;
+}
+
+.logo-part1,
+.logo-part2 {
+  position: absolute;
+  width: 20px;
+  height: 50px;
+  background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+  border-radius: 5px;
+}
+
+.logo-part1 {
+  transform: rotate(20deg);
+  left: 15px;
+}
+
+.logo-part2 {
+  transform: rotate(-20deg);
+  right: 15px;
 }

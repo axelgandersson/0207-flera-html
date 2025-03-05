@@ -3,11 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Axel Andersson - CV Sida</title>
+    <title>Hem - Axel Andersson</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
   <body>
@@ -16,14 +20,21 @@
 
     <!-- Wrap all content in a container -->
     <div class="content-wrapper">
-      <nav>
-        <ul>
-          <li><a href="index.html" class="active">Hem</a></li>
-          <li><a href="about.html">Om Mig</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </nav>
+      <header>
+        <div class="logo">
+          <div class="logo-part1"></div>
+          <div class="logo-part2"></div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Hem</a></li>
+            <li><a href="about.html">Om Mig</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
+        <label class="theme-label" for="theme-switch">Dark Mode</label>
+      </header>
 
       <div id="parent1">
         <div class="image-container">
@@ -88,17 +99,24 @@
       </div>
 
       <footer>
-        <img id="logopicture" src="./bilder/loga.JPG" />
-        <!-- Label in the footer to toggle the checkbox -->
-        <label for="theme-switch" class="theme-label">Toggle Dark Mode</label>
         <ul id="bottomlist">
-          <li><a href="axelgandersson@gmail.com">Email</a></li>
           <li>
-            <a href="https://www.linkedin.com/in/axel-andersson-b72406312/"
-              >LinkedIn</a
+            <a href="mailto:axelgandersson@gmail.com"
+              ><i class="fas fa-envelope"></i> Email</a
             >
           </li>
-          <li><a href="https://github.com/axelgandersson">GitHub</a></li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/axel-andersson-b72406312/"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i> LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/axelgandersson" target="_blank"
+              ><i class="fab fa-github"></i> GitHub</a
+            >
+          </li>
         </ul>
       </footer>
     </div>

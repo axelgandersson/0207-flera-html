@@ -1,0 +1,27 @@
+{
+  "name": "Axel Andersson",
+  "description": "Jag läser just nu till att bli Frontend-utvecklare vid YH Borås. Jag kommer specialisera mig på React också via utbildningen.",
+  "education": [
+    {
+      "degree": "Frontend-React-utvecklare",
+      "institution": "Yrkeshögskolan i Borås",
+      "year": "2025-",
+      "details": "Fokuserar på modern webbutveckling med React, JavaScript och API:er."
+    }
+  ],
+  "experience": [
+    {
+      "title": "Frontend Developer Intern",
+      "company": "TBD",
+      "year": "2025",
+      "details": "Arbetade med att utveckla och underhålla webbapplikationer."
+    }
+  ],
+  "skills": [
+    { "name": "HTML", "level": "Intermediate" },
+    { "name": "CSS", "level": "Intermediate" },
+    { "name": "JavaScript", "level": "Beginner" },
+    { "name": "React", "level": "Not yet acquired" },
+    { "name": "Git", "level": "Not yet acquired" }
+  ]
+}

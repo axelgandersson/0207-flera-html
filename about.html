@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Checkbox at the top of the document -->
@@ -16,58 +20,88 @@
 
     <!-- Wrap all content in a container -->
     <div class="content-wrapper">
-      <nav>
-        <ul>
-          <li><a href="index.html">Hem</a></li>
-          <li><a href="about.html" class="active">Om Mig</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Kontakt</a></li>
-        </ul>
-      </nav>
-
       <header>
-        <h1>Om Mig</h1>
+        <div class="logo">
+          <div class="logo-part1"></div>
+          <div class="logo-part2"></div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="about.html" class="active">Om Mig</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </nav>
+        <label class="theme-label" for="theme-switch">Dark Mode</label>
       </header>
 
       <section id="about">
-        <h2>Axel Andersson</h2>
-        <p>
-          Jag läser just nu till att bli Frontend-utvecklare vid YH Borås. Jag
-          kommer specialisera mig på React också via utbildningen
-        </p>
+        <h2 id="name"></h2>
+        <p id="description"></p>
 
         <h3>Utbildning</h3>
-        <ul>
-          <li>Systemutveckling, Yrkeshögskolan Borås, 2025-</li>
-        </ul>
+        <ul id="education"></ul>
 
         <h3>Arbetserfarenhet</h3>
-        <ul>
-          <li>........</li>
-        </ul>
+        <ul id="experience"></ul>
 
         <h3>Färdigheter</h3>
-        <ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>React tbd</li>
-          <li>Git</li>
-        </ul>
+        <ul id="skills"></ul>
       </section>
 
       <footer>
-        <img id="logopicture" src="./bilder/loga.JPG" />
-        <!-- Label in the footer to toggle the checkbox -->
-        <label for="theme-switch" class="theme-label">Toggle Dark Mode</label>
         <ul id="bottomlist">
-          <li><a href="axelgandersson@gmail.com">Email</a></li>
           <li>
-            <a href="https://www.linkedin.com/in/axel-andersson-b72406312/"
-              >LinkedIn</a
+            <a href="mailto:youremail@example.com"
+              ><i class="fas fa-envelope"></i> Email</a
             >
           </li>
-          <li><a href="https://github.com/axelgandersson">GitHub</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank"
+              ><i class="fab fa-linkedin"></i> LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/yourusername" target="_blank"
+              ><i class="fab fa-github"></i> GitHub</a
+            >
+          </li>
         </ul>
       </footer>
     </div>
+
+    <script>
+      fetch("./cv.json")
+        .then((response) => response.json())
+        .then((data) => {
+          document.getElementById("name").textContent = data.name;
+          document.getElementById("description").textContent = data.description;
+
+          const educationList = document.getElementById("education");
+          data.education.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = `${item.degree}, ${item.institution}, ${item.year} - ${item.details}`;
+            educationList.appendChild(li);
+          });
+
+          const experienceList = document.getElementById("experience");
+          data.experience.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = `${item.title}, ${item.company}, ${item.year} - ${item.details}`;
+            experienceList.appendChild(li);
+          });
+
+          const skillsList = document.getElementById("skills");
+          data.skills.forEach((skill) => {
+            const li = document.createElement("li");
+            li.textContent = `${skill.name} (${skill.level})`;
+            skillsList.appendChild(li);
+          });
+        })
+        .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
+        });
+    </script>
   </body>
 </html>
