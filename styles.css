@@ -1,23 +1,38 @@
 :root {
-  --bg-color: #ffffff;
+  --bg-color: #e7cce5;
   --text-color: #333333;
   --card-bg-color: linear-gradient(to bottom right, pink, yellow);
   --card-text-color: #333333;
   --header-footer-bg-color: #333333;
   --header-footer-text-color: #ffffff;
+  --buttoncolor: white;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
   line-height: 1.6;
   background-color: var(--bg-color);
   color: var(--text-color);
-  width: 100%;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+#backgroundCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
 #about {
   margin: 1em;
 }
@@ -27,15 +42,23 @@ body {
 }
 
 #theme-switch:checked ~ .content-wrapper {
-  --bg-color: #333333;
+  --bg-color: #424242;
   --text-color: #ffffff;
   --card-bg-color: linear-gradient(to bottom right, #d87093, #d8a347);
   --card-text-color: #f0f0f0;
   --header-footer-bg-color: #1a1a1a;
   --header-footer-text-color: #f0f0f0;
+  --buttoncolor: #333333;
 }
 
 .content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  position: relative; /* Ensure the canvas is positioned correctly */
+  z-index: 1; /* Ensure it is above the canvas */
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -46,35 +69,33 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--text-color);
-  color: var(--bg-color);
+  color: var(--buttoncolor);
   cursor: pointer;
   border-radius: 5px;
   padding: 0.5rem 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 3rem;
 }
 
-header {
+header,
+footer {
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  background-color: var(--header-footer-bg-color);
+  color: var(--header-footer-text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-
-  background-color: var(--header-footer-bg-color);
-  color: var(--header-footer-text-color);
+  position: relative;
+  z-index: 1; /* Ensure these elements are above the canvas */
 }
-
-/* nav {
-  background-color: var(--header-footer-bg-color);
-  color: var(--header-footer-text-color);
-  padding: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-} */
 
 nav ul {
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 4em;
+  gap: 1rem;
 }
 
 nav a {
@@ -96,22 +117,47 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 50vh;
-  gap: 3rem;
-  margin: 1rem;
+  gap: 5rem;
+  margin: 3rem;
+  margin-left: 6rem;
+  margin-right: 6rem;
   padding: 2rem;
 }
 
 #contact {
   margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
+#contact h2 {
+  justify-content: center;
+  text-align: center;
+}
+#contact p {
+  justify-content: center;
+  margin: 1em;
+  text-align: center;
+}
+.arrow {
+  width: 0;
+  height: 0;
+  margin-top: 2rem;
+  border-top: 60px solid black;
+  /* border-bottom: 60px solid black; */
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  z-index: 1;
+}
 .image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: relative;
 }
 
-.text-container,
+#textContainer,
 .image-container {
   width: 100%;
   min-height: 100%;
@@ -130,7 +176,7 @@ h2 {
   margin: 1em;
 }
 
-.text-container {
+#textContainer {
   display: flex;
   justify-content: center;
   background: var(--card-bg-color);
@@ -142,6 +188,8 @@ h2 {
   text-align: center;
   color: var(--card-text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  z-index: 1; /* Ensure these elements are above the canvas */
 }
 
 .linktocv {
@@ -187,17 +235,9 @@ h2 {
 }
 
 footer {
-  background-color: var(--header-footer-bg-color);
-  color: var(--header-footer-text-color);
-  text-align: center; /* Change from end to center */
-  padding: 1rem;
-  margin-top: 2rem;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  justify-content: center;
 }
-
 footer a {
   color: var(--header-footer-text-color);
   text-decoration: none;
@@ -238,11 +278,6 @@ footer a:hover {
   margin-right: 0.5rem;
 }
 
-#logopicture {
-  display: flex;
-  width: 150px;
-}
-
 @media only screen and (max-width: 768px) {
   #parent1 {
     grid-template-columns: 1fr;
@@ -252,7 +287,8 @@ footer a:hover {
   }
 
   #proj {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: 1fr; /* Change to single column layout */
     height: auto;
     gap: 1rem;
     padding: 1rem;
@@ -260,14 +296,18 @@ footer a:hover {
 
   .project-card {
     height: auto;
+    min-width: 100%; /* Ensure cards take full width */
+    margin: 0 auto; /* Center the cards */
   }
 
   .project-card img {
-    height: 150px;
+    height: auto; /* Adjust image height */
+    width: 100%; /* Ensure images take full width */
   }
 
   #projhead {
     margin-left: 1rem;
+    text-align: center;
   }
 }
 
@@ -336,26 +376,117 @@ footer a:hover {
 
 .logo {
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   margin: 1rem;
 }
 
 .logo-part1,
 .logo-part2 {
   position: absolute;
-  width: 20px;
-  height: 50px;
+  width: 30px;
+  height: 70px;
   background: linear-gradient(to bottom, #ff7e5f, #feb47b);
   border-radius: 5px;
+  transition: 0.5s;
+  overflow: hidden; /* Ensure the background animation is contained */
 }
 
 .logo-part1 {
   transform: rotate(20deg);
-  left: 15px;
+  left: 20px;
 }
 
 .logo-part2 {
   transform: rotate(-20deg);
-  right: 15px;
+  right: 20px;
+}
+
+.content-wrapper,
+header,
+footer,
+#textContainer,
+.project-card,
+.projectPort-card,
+.image-container,
+nav {
+  position: relative;
+  z-index: 1; /* Ensure these elements are above the canvas */
+}
+
+/* Carousel Container */
+#proj-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+/* Carousel Items */
+#proj {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.project-card {
+  min-width: 300px;
+  margin: 0 1rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.project-card.active {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.project-card.inactive {
+  transform: scale(0.9);
+  opacity: 0.5;
+}
+
+/* Center and style the "Mina Projekt" heading */
+#projhead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--card-bg-color);
+  color: var(--card-text-color);
+  padding: 1rem;
+  margin: 2rem auto;
+  border-radius: 20px;
+  box-shadow: 5px 5px #333;
+  width: fit-content;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

@@ -19,9 +19,9 @@
     <input type="checkbox" id="theme-switch" />
 
     <!-- Wrap all content in a container -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="contentWrapper">
       <header>
-        <div class="logo">
+        <div class="logo" id="logoContainer">
           <div class="logo-part1"></div>
           <div class="logo-part2"></div>
         </div>
@@ -41,7 +41,7 @@
           <img src="./bilder/profbild.JPG" alt="Profilbild" />
         </div>
 
-        <div class="text-container">
+        <div id="textContainer">
           <p>
             Hej! Jag heter Axel Andersson och är en passionerad
             programmerarstudent på YH Borås. <br />
@@ -54,48 +54,59 @@
 
       <h2 id="projhead">Mina Projekt:</h2>
 
-      <div id="proj">
-        <div class="project-card">
-          <img src="./bilder/proj 1.JPG" alt="Projekt 1" />
-          <div class="project-card-content">
-            <h3>Inloggningsida</h3>
-            <p>En inloggningsida skapat i html och css</p>
-            <a href="https://github.com/axelgandersson/inloggsida"
-              >Länk till projekt</a
-            >
+      <div id="proj-carousel">
+        <button class="carousel-btn prev-btn" onclick="moveCarousel(-1)">
+          &#10094;
+        </button>
+        <div id="proj">
+          <div class="project-card">
+            <img src="./bilder/proj 1.JPG" alt="Projekt 1" />
+            <div class="project-card-content">
+              <h3>Inloggningsida</h3>
+              <p>En inloggningsida skapat i html och css</p>
+              <a href="https://github.com/axelgandersson/inloggsida"
+                >Länk till projekt</a
+              >
+            </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <img src="./bilder/cvsidabild.JPG" alt="Projekt 2" />
-          <div class="project-card-content">
-            <h3>Portfolio Webbplats</h3>
-            <p>
-              En responsiv webbplats för att visa upp projekt och erfarenheter.
-            </p>
-            <a href="https://www.w3schools.com/TAgs/tag_button.asp"
-              >Länk till projekt</a
-            >
+          <div class="project-card">
+            <img src="./bilder/cvsidabild.JPG" alt="Projekt 2" />
+            <div class="project-card-content">
+              <h3>Portfolio Webbplats</h3>
+              <p>
+                En responsiv webbplats för att visa upp projekt och
+                erfarenheter.
+              </p>
+              <a href="https://www.w3schools.com/TAgs/tag_button.asp"
+                >Länk till projekt</a
+              >
+            </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <img src="./bilder/darkmodetoggle.png" alt="Projekt 3" />
-          <div class="project-card-content">
-            <h3>Dark Mode Toggle button</h3>
-            <p>En enkel js kod som jag kan anväda mig av i framtida projekt</p>
-            <a href="#">Länk till projekt</a>
+          <div class="project-card">
+            <img src="./bilder/darkmodetoggle.png" alt="Projekt 3" />
+            <div class="project-card-content">
+              <h3>Dark Mode Toggle button</h3>
+              <p>
+                En enkel js kod som jag kan anväda mig av i framtida projekt
+              </p>
+              <a href="#">Länk till projekt</a>
+            </div>
           </div>
-        </div>
 
-        <div class="project-card">
-          <img src="" alt="TBA" />
-          <div class="project-card-content">
-            <h3>Nytt Projekt</h3>
-            <p>Nytt projekt kommer snart.</p>
-            <a href="#">Länk till projekt</a>
+          <div class="project-card">
+            <img src="" alt="TBA" />
+            <div class="project-card-content">
+              <h3>Nytt Projekt</h3>
+              <p>Nytt projekt kommer snart.</p>
+              <a href="#">Länk till projekt</a>
+            </div>
           </div>
         </div>
+        <button class="carousel-btn next-btn" onclick="moveCarousel(1)">
+          &#10095;
+        </button>
       </div>
 
       <footer>
@@ -120,5 +131,12 @@
         </ul>
       </footer>
     </div>
+
+    <script src="./background.js"></script>
+    <script src="./carousel.js"></script>
+    <script>
+      addBackgroundAnimation("contentWrapper");
+      addBackgroundAnimation("logoContainer");
+    </script>
   </body>
 </html>
