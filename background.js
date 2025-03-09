@@ -1,3 +1,6 @@
+//oringinal code:https://github.com/diogotcorreia/dtc-website
+//been modified to fit the project
+
 class Particle {
   constructor(x, y, directionX, directionY, size, color, ctx) {
     this.x = x;

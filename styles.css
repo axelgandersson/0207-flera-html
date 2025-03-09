@@ -256,8 +256,8 @@ footer a:hover {
   gap: 1rem;
   display: flex;
   flex-direction: row;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 #bottomlist li {
@@ -288,7 +288,7 @@ footer a:hover {
 
   #proj {
     display: grid;
-    grid-template-columns: 1fr; /* Change to single column layout */
+    grid-template-columns: 1fr;
     height: auto;
     gap: 1rem;
     padding: 1rem;
@@ -296,13 +296,13 @@ footer a:hover {
 
   .project-card {
     height: auto;
-    min-width: 100%; /* Ensure cards take full width */
-    margin: 0 auto; /* Center the cards */
+    min-width: 100%;
+    margin: 0 auto;
   }
 
   .project-card img {
-    height: auto; /* Adjust image height */
-    width: 100%; /* Ensure images take full width */
+    height: auto;
+    width: 100%;
   }
 
   #projhead {

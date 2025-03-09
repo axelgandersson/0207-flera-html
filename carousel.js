@@ -5,7 +5,7 @@ function updateCarousel() {
   const carousel = document.getElementById("proj");
   const cardWidth = cards[0].offsetWidth;
   const gap = parseInt(window.getComputedStyle(carousel).gap);
-  const additionalOffset = cardWidth / 2; // Adjust this value as needed
+  const additionalOffset = cardWidth / 2;
 
   cards.forEach((card, index) => {
     if (index === currentIndex) {
